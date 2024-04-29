@@ -1,0 +1,17 @@
+# Byte-compiled / optimized python files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# System or temporary files
+.DS_Store
+Thumbs.db
+*.swp
