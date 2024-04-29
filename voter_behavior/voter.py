@@ -11,6 +11,14 @@ class Voter:
 
         if lean_distribution == 'normal':
             self.lean = numpy.random.normal(0, 0.25)
+        
+        if lean_distribution == 'bimodal':
+            flip = numpy.random.random()-0.5
+            if flip < 0:
+                self.lean = numpy.random.normal(-0.5, 0.25) 
+            else:
+                self.lean = numpy.random.normal(0.5, 0.25) 
+
     
     def __repr__(self):
         return f'<Voter lean={self.lean}>'

@@ -22,6 +22,9 @@ if __name__ == '__main__':
     e_normal.vote(candidates)
 
     # Creates bimodal electorate 
+    e_bimodal = Election(num_voters=10000, lean_distribution='bimodal')
+    histogram_plot([v.lean for v in e_bimodal.voters], 'bimodal')
+    e_bimodal.vote(candidates)
 
     # Show all plots
     show_plot()

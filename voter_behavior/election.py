@@ -3,6 +3,7 @@ import numpy
 
 class Election:
     def __init__(self, num_voters=10, lean_distribution=None):
+        self.lean_distributions = lean_distribution
         if lean_distribution is None:
             raise AttributeError('Must choose lean distribution')
 
@@ -22,7 +23,7 @@ class Election:
             chosen = min(candidates, key= lambda candidate: abs(candidate.lean - voter.lean))
             tally[chosen.name] += 1
         
-        print(f'The final tally: {tally}')
+        print(f'The final tally in {self.lean_distributions}: {tally}')
             
         
                 
