@@ -7,7 +7,10 @@ class Voter:
             raise AttributeError('Must choose lean distribution')
         
         if lean_distribution == 'uniform':
-            self.lean = numpy.random.random()
+            self.lean = numpy.random.random()-0.5
+
+        if lean_distribution == 'normal':
+            self.lean = numpy.random.normal(0, 0.25)
     
     def __repr__(self):
         return f'<Voter lean={self.lean}>'
