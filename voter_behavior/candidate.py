@@ -8,6 +8,7 @@ class Candidate:
         
         self.name = name
         self.lean = lean
+        print(self)
     
     def __repr__(self):
-        return f'<Candidate lean={self.lean}>'
+        return f'<Candidate name={self.name} lean={self.lean}>'

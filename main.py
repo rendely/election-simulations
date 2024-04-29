@@ -1,6 +1,6 @@
 from voter_behavior.election import Election
 from voter_behavior.candidate import Candidate
-from utils import histogram_plot, start_plot, show_plot
+from utils import histogram_plot, show_plot
 
 if __name__ == '__main__':
     print('Starting simulation')
@@ -9,18 +9,16 @@ if __name__ == '__main__':
     candidates = [
         Candidate(name='A', lean=-0.5),
         Candidate(name='B', lean=0.5)
-    ]
-    # Create plot
-    fig = start_plot()
+    ]    
 
     # Creates uniform electorate
     e_unfiorm = Election(num_voters=10000, lean_distribution='uniform')
-    histogram_plot(fig,[v.lean for v in e_unfiorm.voters], 'uniform voters')
+    histogram_plot([v.lean for v in e_unfiorm.voters], 'uniform voters')
     e_unfiorm.vote(candidates)
 
     # Creates normal electorate
     e_normal = Election(num_voters=10000, lean_distribution='normal')
-    histogram_plot(fig,[v.lean for v in e_normal.voters], 'normal voters')
+    histogram_plot([v.lean for v in e_normal.voters], 'normal voters')
     e_normal.vote(candidates)
 
     # Creates bimodal electorate 
