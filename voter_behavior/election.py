@@ -21,9 +21,11 @@ class Election:
 
         for voter in self.voters:
             chosen = min(candidates, key= lambda candidate: abs(candidate.lean - voter.lean))
-            tally[chosen.name] += 1
+            if abs(chosen.lean - voter.lean) < 0.3:
+                tally[chosen.name] += 1
         
         print(f'The final tally in {self.lean_distributions}: {tally}')
+        return f'The final tally in {self.lean_distributions}: {tally}'
             
         
                 
